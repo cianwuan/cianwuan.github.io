@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leaperle.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-03-11T02:09:48.083Z</updated>
+    <title>隐世之国</title>
+    <updated>2021-03-11T02:12:20.239Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leaperle.github.io"/>
     <link rel="self" href="https://leaperle.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>坐忘山水，自理桑田</subtitle>
     <logo>https://leaperle.github.io/images/avatar.png</logo>
     <icon>https://leaperle.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 隐世之国</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://leaperle.github.io/post/hello-gridea/</id>
