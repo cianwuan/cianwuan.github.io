@@ -1,0 +1,273 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的NAS 组装记 | 隐世之国</title>
+<link rel="shortcut icon" href="https://shixuhui.com/favicon.ico?v=1616670474452">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://shixuhui.com/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="我的NAS 组装记 | 隐世之国 - Atom Feed" href="https://shixuhui.com/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="这几天买了一堆二手装机零件，自己装了一台 NAS ，并在这个过程中遇到了一些问题并网上查资料解决问题，我把过程大概记录下来分享给大家，以后如果有这方面需求可以给予些许常考。
+
+缘起
+说起来这个缘起也是很奇葩。
+搬了新宿舍，购置了一堆米家的智..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://shixuhui.com">
+  <img class="avatar" src="https://shixuhui.com/images/avatar.png?v=1616670474452" alt="">
+  </a>
+  <h1 class="site-title">
+    隐世之国
+  </h1>
+  <p class="site-description">
+    坐忘山水，自理桑田
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/cianwuan" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/cianwuan" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.facebook.com/shijiaxuhui/" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              我的NAS 组装记
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-08-03
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://shixuhui.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E5%BA%8A/%E5%B0%81%E9%9D%A2%E5%9B%BE/hp%20600g1.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>这几天买了一堆二手装机零件，自己装了一台 NAS ，并在这个过程中遇到了一些问题并网上查资料解决问题，我把过程大概记录下来分享给大家，以后如果有这方面需求可以给予些许常考。</p>
+<!-- more -->
+<h2 id="缘起">缘起</h2>
+<p>说起来这个缘起也是很奇葩。</p>
+<p>搬了新宿舍，购置了一堆米家的智能家居，然后想着怎么接入 HomeKit，没错，好好的米家自己的智能家居体系不用，非要用 HomeKit 。</p>
+<p>害，还不是因为原生的比较酷嘛。</p>
+<p>因为并没有选择 Aqara 原生的 HomeKit 方案，所以我必须需要一个第三方的桥接来联通米家与 HomeKit。</p>
+<p>一般情况下，大家都会选择树莓派，但是考虑到树莓派好几百的价格，我第一时间并没有考虑，而是选择了斐讯的 N1 。</p>
+<p>这台神奇的电视盒，因为不俗的性能，以及被各种系统支持，加上才100出头的价格，所以成了网友们把玩宠儿。</p>
+<p>N1 现在在淘宝上面被关键词屏蔽了，闲鱼上面也需要一定搜索技巧才能找到，我就直接在拼多多上面一试，一搜一大堆，随便选一个价格合适的就可以。</p>
+<p>接着安装 Armbian，安装 Docker，安装 HomeAssisstant，成功桥接 HomeKit。是的，过程很顺利，但是玄学问题出现了，莫名其妙的设备离线经常出现，找不到原因在哪里，于是只能放弃这个方案，将 N1 卖掉了。</p>
+<p>其实在那个时候网上查资料的时候，就已经注意到用群晖的系统通过 Docker 来安装 HomeAssistant 的方案了，毕竟群晖作为一个官方的系统加上用户使用基数，稳定性还是比较可靠的。</p>
+<p>但是原装的群晖 x86 架构的机器要一千好几，直接将我劝退。于是将目光转线了黑群晖的机器，“蜗牛星际”这个矿难主机出现在眼前，300-400多的价格，四盘位，不算太差的处理器。但是最后我没有下手，因为总觉得这个机器透露出一种廉价、不可靠的气息。</p>
+<p>直到有一天，在 Youtube 看到一个叫“司波徒”的博主在视频里用惠普的准系统来组装 NAS 立刻中草了。</p>
+<h2 id="捡垃圾">捡垃圾</h2>
+<p>没错，这台准系统就是 HP PreDesk 600 G1 SFF。</p>
+<p>Q85芯片组，LGA 1150针，支持四、五代的英特尔处理器，支持DDR 3内存。机箱原生极限应该能挂两块3.5的机械硬盘，一块2.5的机械硬盘。如果将PCIE换成硬盘扩展卡，那就多了四个盘位，但是还是要考虑机箱电源的功率。</p>
+<p>这款准系统在闲鱼上面成色不错的二手价格在240左右，随便找一家就行，购买的时候注意看准型号。</p>
+<p>在视频里，博主选择的是二手英特尔G3220，我最后选择的是二手G3260，45块包邮，也就比G3220贵了十几块，少喝一杯奶茶而已，其实性能也只强了百分之五左右。内存选择的是两条金士顿的DDR 3 1333 拆机内存，32包邮。</p>
+<p>恰好手上有一台闲置的小米路由器2，内置1T的机械硬盘，于是将硬盘拆出来，就省了硬盘的钱。</p>
+<p>因为黑群晖需要U盘引导或者固态硬盘引导，所以我买了一个9块钱川宇的TF读卡器把一张闲置的16G内存卡当引导U盘。</p>
+<p>就这样，零件就凑齐了，一共花了400块左右。个人感觉比“星际蜗牛”要更值得。</p>
+<h2 id="合体吧">合体吧！</h2>
+<p>说实话，好久没有装机了，上次接触装机还是在初中的时候，从《电脑报》中接触DIY装机的知识，并在初中毕业之后组装了一台自己的电脑。</p>
+<p>装机过程还是很轻松的，毕竟这是一台准系统，不想像整机装机那样需要从零开始。</p>
+<p>我只需要将处理器放进扣具中，均匀涂上硅脂，盖好散热器。内存条按照防呆口插进插槽、硬盘按照接口将SATA与电源线接上就行了。</p>
+<p>然后将读卡器写入群晖的IMG引导文件，并修改U盘的grub.cfg文件中的 VID与PID值，因为我在闲鱼购买了群晖洗白的SN与Mac码，也一并填入。</p>
+<p>然后插入背后的USB口。</p>
+<p>将网线连接路由器，插上机箱电源，点亮机箱开关。</p>
+<h2 id="群晖系统初探">群晖系统初探</h2>
+<p>第一次开机，我将机箱连接上了显示器，系统自动从U盘引导启动，选择第一个，引导成功，出现这个界面，就表示成功。</p>
+<p>然后回到电脑上，使用群晖助手搜索局域网设备，找到一个未安装设备，自动打开网页，按照提示走，选择手动安装固件，取消自动更新，配置好之后，然后等待10分钟机器重启。</p>
+<p>当当当当，一台黑晖群晖成功启动，基本上与原装群晖没多大区别，性能更强，功耗更高（误）。</p>
+<p>进入DSM系统之后，在控制面板稍微按照自己的习惯修改了一些设置。然后打开套件中心，更新几个套件。<br>
+然后用电脑连接黑群晖的局域网IP，就能挂载网络位置，和本地硬盘读写方式没什么区别。</p>
+<p>然后就是安装Docker 和虚拟机，开始折腾。</p>
+<p>具体如何食用群晖，网上一堆堆的教程，我自己主要就是当一个局域网网盘，HomeAssistant桥接，软路由这几个功能。</p>
+<h2 id="一些坑">一些坑</h2>
+<h3 id="虚拟机实例无法开机">虚拟机实例无法开机</h3>
+<p>想给黑群晖安装一个OpenWrt来当一个软路由，于是用虚拟机来安装x86版的LEDE OpenWrt，但是在导入IMG之后，死活无法对虚拟机实例开机，提示内存不够。</p>
+<p>仔细一想这不应该，毕竟很多白群晖2G内存也能允许虚拟机，于是我猜想应该是处理器的虚拟化（VT）没有打开。</p>
+<p>于是网上找资料，找到一个办法：<br>
+可以通过SSH连接群晖，然后输入命令</p>
+<pre><code>cat /proc/cpuinfo |grep vmx
+</code></pre>
+<p>看返回：</p>
+<pre><code>smod |grep kvm
+未开启
+kvm                   554609  0
+irqbypass              13503  1 kvm
+
+已开启
+kvm_intel             170181  0
+kvm                   554609  1 kvm_intel
+irqbypass              13503  1 kvm
+</code></pre>
+<p>确实我的机器没有开启虚拟化，需要进入BIOS开启处理器虚拟化。</p>
+<p>HP的这台系统进入BIOS的方式是开机按F10进入，然后在Security这一栏找到System Security进入，将Virtualization Technology设置为Enable，保存并退出重启。</p>
+<p>然后再SSH连接，执行命令：<br>
+cat /proc/cpuinfo |grep vmx<br>
+这时候显示已经打开了虚拟化，再回到DSM系统中虚拟机，就能顺利将虚拟机实例开机了。</p>
+<h3 id="重装dsm系统">重装DSM系统</h3>
+<p>在OpenWrt里面，将网口的端口设置错之后，在局域网就无法连接到这台黑群晖了。</p>
+<p>没办法，只能重装系统。</p>
+<p>但是硬盘了已经有好几百GB的资料了，我需要找到一个保存硬盘资料重装系统的方法。</p>
+<p>于是在网上找资料，了解到群晖的系统是在每个硬盘建立一个EXT4分区来安装。于是我用电脑制作了一个WinPE启动U盘，我选择的是优启通，几分钟就制作完成。</p>
+<p>然后我将黑群晖原来的系统引导U盘拔了，插入WinPE的U盘，开机进入系统，打开磁盘工具。</p>
+<p>我们可以看到有一个粉色的EXT4分区，选择右键，格式化当前分区，还是选择EXT4格式。如果是好几个硬盘，那就将每个硬盘的这个粉色分区格式化。</p>
+<p>完成之后，关机，拔掉U盘，插入群晖系统的引导U盘，开机。</p>
+<p>然后再在电脑上面用群晖助手搜索，自动打开网页，同最开始安装系统一样，手动选择系统文件，然后这个时候并不会提示此操作会格式化硬盘，安装完成之后，等待重启。</p>
+<p>当当当当，系统重装完成，进入DSM的File Station，保存的资料都还在。只是偏好设置和套件没有了，重新安装即可。</p>
+<h2 id="后记">后记</h2>
+<p>我想到什么就写什么，大概就是这些内容吧，后续需要补充的我会及时更新博文。</p>
+<p>其实组装NAS，如果你只是简单的用做局域网盘符的话，除了选择群晖系统，有不少的选择，比如Unraid、FreeNas等等，而且也能实现Docker功能。我个人觉得群晖提供的套件使用起来比较方便，所以选择了群晖，但是白嫖人家系统还是不推荐的。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%BC%98%E8%B5%B7">缘起</a></li>
+<li><a href="#%E6%8D%A1%E5%9E%83%E5%9C%BE">捡垃圾</a></li>
+<li><a href="#%E5%90%88%E4%BD%93%E5%90%A7">合体吧！</a></li>
+<li><a href="#%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F%E5%88%9D%E6%8E%A2">群晖系统初探</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E5%9D%91">一些坑</a>
+<ul>
+<li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%9E%E4%BE%8B%E6%97%A0%E6%B3%95%E5%BC%80%E6%9C%BA">虚拟机实例无法开机</a></li>
+<li><a href="#%E9%87%8D%E8%A3%85dsm%E7%B3%BB%E7%BB%9F">重装DSM系统</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://shixuhui.com/post/jZEH7eTkw/">
+              <h3 class="post-title">
+                我的信息收集处理迷思
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://shixuhui.com/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

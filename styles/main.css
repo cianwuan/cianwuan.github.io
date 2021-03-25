@@ -355,6 +355,7 @@ td {
   text-align: center;
 }
 .site-header .site-title {
+  display: none;
   font-size: 32px;
   font-weight: bold;
 }
@@ -376,7 +377,7 @@ td {
   font-weight: 600;
 }
 .site-header .avatar {
-  margin-bottom: 24px;
+  margin-bottom: -15px;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -991,4 +992,15 @@ td {
       body {
         font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Droid Sans Fallback','Microsoft YaHei',sans-serif;
       }
+    
+      .post-container .post .post-feature-image {
+    display: block;
+    width: 100%;
+    padding: 32.6%;
+    border-radius: 2px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s;
+}
     
