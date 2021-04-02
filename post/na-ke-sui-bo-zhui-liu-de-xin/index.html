@@ -11,13 +11,14 @@
 
 
 
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <meta name="description" content="前几天，在林清玄的散文中看到一段话，大概意思就是，任何能让你的心念产生波动的都是无明。
 晚上，突然想起这两天的心情变化，深感到无明的沉重。
 他人的一句话，能改变自己的心念。让这两天一直都在反复思考它，甚至到了要走火入魔的情况。虽然看了不少心..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
+  </head> 
   <body>
     <div class="main">
       <div class="main-content">
@@ -130,6 +131,8 @@
             </div>
           </article>
         </div>
+		
+
 
         
           <div class="next-post">
@@ -142,26 +145,14 @@
           </div>
         
 
-<!--载入js，在</body>之前插入即可-->
-    <!--Leancloud 操作库:-->
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <!--Valine 的核心代码库-->
-    <script src="/media/scripts/Valine.min.js"></script>
-<div class="comment"></div>
-<script>
-    new Valine({
-        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-        av: AV, 
-        el: '.comment',
-	    lang: 'zh-cn',//设置评论语言
-        emoticon_url: 'https://cloud.panjunwen.com/alu',
-        emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
-        app_id: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
-        app_key: 'qBbUVMXgIpJhKaOvnp6D9n6D',
-        placeholder: '评论留言'
-    });
-</script>  
-	
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
+            appKey: 'qBbUVMXgIpJhKaOvnp6D9n6D'
+        })
+    </script>		
 
         
 
@@ -215,5 +206,7 @@
       });
 
     </script>
+
+	  
   </body>
 </html>

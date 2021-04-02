@@ -11,13 +11,14 @@
 
 
 
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <meta name="description" content="读过《大慧普觉禅师法语》之后，其中禅师对清净居士的一段开示让我印象很深刻：
 
 士人博览群书。本以资益性识。而返以记持古人言语。蕴在胸中。作事业资谈柄。殊不知。圣人设教之意。所谓终日数他宝。自无半钱分。看读佛教亦然。当须见月亡指。不可依语生解..." />
     <meta name="keywords" content="佛教,教理" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
+  </head> 
   <body>
     <div class="main">
       <div class="main-content">
@@ -145,6 +146,8 @@
             </div>
           </article>
         </div>
+		
+
 
         
           <div class="next-post">
@@ -157,26 +160,14 @@
           </div>
         
 
-<!--载入js，在</body>之前插入即可-->
-    <!--Leancloud 操作库:-->
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <!--Valine 的核心代码库-->
-    <script src="/media/scripts/Valine.min.js"></script>
-<div class="comment"></div>
-<script>
-    new Valine({
-        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-        av: AV, 
-        el: '.comment',
-	    lang: 'zh-cn',//设置评论语言
-        emoticon_url: 'https://cloud.panjunwen.com/alu',
-        emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
-        app_id: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
-        app_key: 'qBbUVMXgIpJhKaOvnp6D9n6D',
-        placeholder: '评论留言'
-    });
-</script>  
-	
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
+            appKey: 'qBbUVMXgIpJhKaOvnp6D9n6D'
+        })
+    </script>		
 
         
 
@@ -230,5 +221,7 @@
       });
 
     </script>
+
+	  
   </body>
 </html>

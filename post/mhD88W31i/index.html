@@ -11,13 +11,14 @@
 
 
 
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <meta name="description" content="这次的“和合共生”是自2012年对邺城考古发掘、修复之后的第一个系统性的大展。邺城发掘的文物目前公开展出的不足300件，这次展览就占了171件，所以说十分厚道。
 
 邺城在历史中充当过不同政权的政治中心，三国时期，曹操修邺城，建邺北城。之后从..." />
     <meta name="keywords" content="佛教,艺术" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
+  </head> 
   <body>
     <div class="main">
       <div class="main-content">
@@ -156,6 +157,8 @@
             </div>
           </article>
         </div>
+		
+
 
         
           <div class="next-post">
@@ -168,26 +171,14 @@
           </div>
         
 
-<!--载入js，在</body>之前插入即可-->
-    <!--Leancloud 操作库:-->
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <!--Valine 的核心代码库-->
-    <script src="/media/scripts/Valine.min.js"></script>
-<div class="comment"></div>
-<script>
-    new Valine({
-        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-        av: AV, 
-        el: '.comment',
-	    lang: 'zh-cn',//设置评论语言
-        emoticon_url: 'https://cloud.panjunwen.com/alu',
-        emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
-        app_id: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
-        app_key: 'qBbUVMXgIpJhKaOvnp6D9n6D',
-        placeholder: '评论留言'
-    });
-</script>  
-	
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
+            appKey: 'qBbUVMXgIpJhKaOvnp6D9n6D'
+        })
+    </script>		
 
         
 
@@ -241,5 +232,7 @@
       });
 
     </script>
+
+	  
   </body>
 </html>

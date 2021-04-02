@@ -11,12 +11,13 @@
 
 
 
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <meta name="description" content="今天看到一篇文章，内容是关于（伪）文艺青年的标志物品。文章里面提到的物品基本上我都能对上号了。
 没错，我也曾经中二过，幻想能过着精致优雅的日子。那时年轻阅历少，世界观都还不健全，对鸡汤文的无比推崇，并试图在生活方式上使用带有“逼格”的物品来..." />
     <meta name="keywords" content="随笔,生活" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
+  </head> 
   <body>
     <div class="main">
       <div class="main-content">
@@ -147,6 +148,8 @@
             </div>
           </article>
         </div>
+		
+
 
         
           <div class="next-post">
@@ -159,26 +162,14 @@
           </div>
         
 
-<!--载入js，在</body>之前插入即可-->
-    <!--Leancloud 操作库:-->
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <!--Valine 的核心代码库-->
-    <script src="/media/scripts/Valine.min.js"></script>
-<div class="comment"></div>
-<script>
-    new Valine({
-        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-        av: AV, 
-        el: '.comment',
-	    lang: 'zh-cn',//设置评论语言
-        emoticon_url: 'https://cloud.panjunwen.com/alu',
-        emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
-        app_id: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
-        app_key: 'qBbUVMXgIpJhKaOvnp6D9n6D',
-        placeholder: '评论留言'
-    });
-</script>  
-	
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'L8UJclMcqIJDbyuxayQwa3yT-MdYXbMMI',
+            appKey: 'qBbUVMXgIpJhKaOvnp6D9n6D'
+        })
+    </script>		
 
         
 
@@ -232,5 +223,7 @@
       });
 
     </script>
+
+	  
   </body>
 </html>
